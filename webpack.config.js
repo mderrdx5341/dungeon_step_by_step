@@ -17,7 +17,7 @@ module.exports = {
         })*/
 	],
 	entry: {
-		app: path.resolve(__dirname, './frontend/main.ts'),
+		app: path.resolve(__dirname, './frontend/App.ts'),
 	},
     devtool: 'source-map',
     mode: "production", //production, development
