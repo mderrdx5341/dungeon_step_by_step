@@ -1,0 +1,30 @@
+body {
+    width: 300px;
+    margin: 0 auto;
+}
+.cards {
+    width: 302px;
+    height: 300px;
+    border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+} 
+
+.cards__item {
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+.player {
+    width: 302px;
+}
+
+.player__cart 
+{
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
