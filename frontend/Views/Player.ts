@@ -11,5 +11,10 @@ class Player
         player.classList = 'player';
         let playerCart = document.createElement('div');
         playerCart.classList = 'player__cart';
+        player.appendChild(playerCart);
+
+        return player;
     }
 }
+
+export default Player;

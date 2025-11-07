@@ -1,4 +1,6 @@
 import './App.scss';
+import Cards from './Views/Cards';
+import Player from './Views/Player';
 
 class App
 {
@@ -11,22 +13,11 @@ class App
 
     run()
     {
-        let cards = document.createElement('div');
-        cards.classList = 'cards';
-        for(let i = 0; i < 9; i ++) {
-            let cartItem = document.createElement('div');
-            cartItem.classList = 'cards__item';
-            cards.appendChild(cartItem);
-        }
+        let cards = new Cards();
+        let player = new Player();
 
-        let player = document.createElement('div');
-        player.classList = 'player';
-        let playerCart = document.createElement('div');
-        playerCart.classList = 'player__cart';
-        player.appendChild(playerCart);
-
-        this.rootNode.appendChild(cards);
-        this.rootNode.appendChild(player);
+        this.rootNode.appendChild(cards.render());
+        this.rootNode.appendChild(player.render());
     }
 }
 
