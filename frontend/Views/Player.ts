@@ -1,8 +1,12 @@
+import * as Core from '../Core/';
+
 class Player
 {
-    constructor()
-    {
+    private player;
 
+    constructor(player: Core.Player)
+    {
+        this.player = player; 
     }
 
     render()
@@ -11,6 +15,7 @@ class Player
         player.classList = 'player';
         let playerCart = document.createElement('div');
         playerCart.classList = 'player__cart';
+        playerCart.innerHTML = this.player.getName() + '<br>' + this.player.getHealth();
         player.appendChild(playerCart);
 
         return player;

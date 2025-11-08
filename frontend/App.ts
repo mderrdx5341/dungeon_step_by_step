@@ -15,7 +15,8 @@ class App
     {
         let cardsBoard = new Core.CardsBoard();
         let cardsBoardView = new Views.CardsBoard(cardsBoard);
-        let playerView = new Views.Player();
+        let player = new Core.Player();
+        let playerView = new Views.Player(player);
         let keyboard = new Views.Keyboard();
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
