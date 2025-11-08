@@ -33,7 +33,7 @@ class CardsBoard
                 let cart = line.getCards()[i];
                 let cartItem = document.createElement('div');
                 cartItem.classList = 'cards-board__item';
-                cartItem.innerHTML = cart.getTitle();
+                cartItem.innerHTML = cart.getTitle() + '<br>' + cart.getDamage();
                 this.cardsBoardHtml.appendChild(cartItem);
             }
         }

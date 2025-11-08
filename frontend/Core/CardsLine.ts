@@ -6,9 +6,9 @@ class CardsLine
     constructor()
     {
         this.cards = [
-            new Card(Math.floor(Math.random() * 100).toString()),
-            new Card(Math.floor(Math.random() * 100).toString()),
-            new Card(Math.floor(Math.random() * 100).toString())
+            new Card('Wrong'),
+            new Card('Wrong'),
+            new Card('Wrong')
         ]
     }
 

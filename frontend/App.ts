@@ -20,16 +20,19 @@ class App
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
             console.log('Up');
+            console.log(cardsBoard.getLines()[2].getCards()[1].getDamage());
             cardsBoardView.update();
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
             console.log('Right');
+            console.log(cardsBoard.getLines()[2].getCards[0]);
             cardsBoardView.update();
         });
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
             console.log('Left');
+            console.log(cardsBoard.getLines()[2].getCards[2]);
             cardsBoardView.update();
         });
 
