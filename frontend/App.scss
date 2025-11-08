@@ -2,7 +2,7 @@ body {
     width: 300px;
     margin: 0 auto;
 }
-.cards {
+.cards-board {
     width: 302px;
     height: 300px;
     border: 1px solid #000;
@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
 } 
 
-.cards__item {
+.cards-board__item {
     border: 1px solid #000;
     width: 100px;
     height: 100px;

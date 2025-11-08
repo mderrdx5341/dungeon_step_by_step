@@ -1,7 +1,8 @@
 import './App.scss';
-import Cards from './Views/Cards';
+import Cards from './Views/CardsBoard';
 import Player from './Views/Player';
 import Keyboard from './Views/Keybord';
+import CardsBoard from './Views/CardsBoard';
 
 class App
 {
@@ -14,7 +15,7 @@ class App
 
     run()
     {
-        let cards = new Cards();
+        let cards = new CardsBoard();
         let player = new Player();
         let keyboard = new Keyboard();
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
