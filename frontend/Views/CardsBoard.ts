@@ -12,12 +12,16 @@ class CardsBoard
     {
         let cardsBoard = document.createElement('div');
         cardsBoard.classList = 'cards-board';
-        for(let i = 0; i < 9; i ++) {
-            let cartItem = document.createElement('div');
-            cartItem.classList = 'cards-board__item';
-            cardsBoard.appendChild(cartItem);
+        for(let i = 0; i < this.cartsBoard.getLines().length; i++) {
+            let line = this.cartsBoard.getLines()[i];
+            for(let i = 0; i < line.getCards().length; i++) {
+                let cart = line.getCards()[i];
+                let cartItem = document.createElement('div');
+                cartItem.classList = 'cards-board__item';
+                cartItem.innerHTML = cart.getTitle();
+                cardsBoard.appendChild(cartItem);
+            }
         }
-
         return cardsBoard;
     }
 }

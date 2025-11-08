@@ -6,6 +6,11 @@ class Card
     {
         this.title = title;
     }
+
+    public getTitle(): string
+    {
+        return this.title;
+    }
 }
 
 export default Card;
