@@ -14,23 +14,19 @@ class CardsBoard
 
     render()
     {
-        for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
-            let line = this.cardsBoard.getLines()[i];
-            for(let i = 0; i < line.getCards().length; i++) {
-                let cart = line.getCards()[i];
-                let cartItem = document.createElement('div');
-                cartItem.classList = 'cards-board__item';
-                cartItem.innerHTML = cart.getTitle();
-                this.cardsBoardHtml.appendChild(cartItem);
-            }
-        }
+        this.updateHtml();
         return this.cardsBoardHtml;
     }
 
-    update()
+    public update()
     {
         this.cardsBoard.update();
         this.cardsBoardHtml.innerHTML = '';
+        this.updateHtml();
+    }
+
+    updateHtml()
+    {
         for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
             let line = this.cardsBoard.getLines()[i];
             for(let i = 0; i < line.getCards().length; i++) {
