@@ -2,23 +2,31 @@ import * as Core from '../Core/';
 
 class Player
 {
-    private player;
+    private player: Core.Player;
+    private playerHtml: HTMLElement;
+    private playerCard: HTMLElement;
 
     constructor(player: Core.Player)
     {
-        this.player = player; 
+        this.player = player;
+        this.playerHtml = document.createElement('div');
+        this.playerHtml.classList = 'player';
+        this.playerCard = document.createElement('div');
+        this.playerCard.classList = 'player__cart';
     }
 
     render()
     {
-        let player = document.createElement('div');
-        player.classList = 'player';
-        let playerCart = document.createElement('div');
-        playerCart.classList = 'player__cart';
-        playerCart.innerHTML = this.player.getName() + '<br>' + this.player.getHealth();
-        player.appendChild(playerCart);
 
-        return player;
+        this.update()
+        this.playerHtml.appendChild(this.playerCard);
+
+        return this.playerHtml;
+    }
+
+    update()
+    {
+       this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth(); 
     }
 }
 

@@ -20,8 +20,11 @@ class App
         let keyboard = new Views.Keyboard();
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            console.log('Up');
-            console.log(cardsBoard.getLines()[2].getCards()[1].getDamage());
+            let damage = cardsBoard.getLines()[2].getCards()[1].getDamage();
+            console.log(damage);
+            let newPlayerHealts = player.getHealth() - damage;
+            player.setHealts(newPlayerHealts);
+            playerView.update();
             cardsBoardView.update();
         });
 

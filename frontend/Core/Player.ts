@@ -18,6 +18,11 @@ class Player
     {
         return this.health;
     }
+
+    setHealts(health: number)
+    {
+        this.health = health;
+    }
 }
 
 export default Player;
