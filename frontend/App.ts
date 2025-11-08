@@ -17,12 +17,20 @@ class App
         let cardsBoardView = new Views.CardsBoard(cardsBoard);
         let playerView = new Views.Player();
         let keyboard = new Views.Keyboard();
+
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            console.log('ah aha ahaha')
+            console.log('Up');
+            cardsBoardView.update();
         });
 
-        keyboard.addActionFromKey('ArrowDown', (e: KeyboardEvent): void => {
-            console.log('ah aha ahaha')
+        keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
+            console.log('Right');
+            cardsBoardView.update();
+        });
+
+        keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
+            console.log('Left');
+            cardsBoardView.update();
         });
 
 
