@@ -16,12 +16,12 @@ class App
     {
         let cards = new Cards();
         let player = new Player();
-        let keybord = new Keyboard();
-        keybord.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
+        let keyboard = new Keyboard();
+        keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
             console.log('ah aha ahaha')
         });
 
-        keybord.addActionFromKey('ArrowDown', (e: KeyboardEvent): void => {
+        keyboard.addActionFromKey('ArrowDown', (e: KeyboardEvent): void => {
             console.log('ah aha ahaha')
         });
 
