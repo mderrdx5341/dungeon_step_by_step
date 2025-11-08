@@ -17,6 +17,11 @@ class CardsBoard
         ];
     }
 
+    public update(): void
+    {
+        
+    }
+
     generate()
     {
 

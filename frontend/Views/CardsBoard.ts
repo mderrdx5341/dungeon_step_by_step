@@ -2,20 +2,20 @@ import * as Core from '../Core';
 
 class CardsBoard
 {
-    private cartsBoard: Core.CardsBoard;
+    private cardsBoard: Core.CardsBoard;
     private cardsBoardHtml: HTMLElement;
 
     constructor(cardsBoard: Core.CardsBoard)
     {
-        this.cartsBoard = cardsBoard;
+        this.cardsBoard = cardsBoard;
         this.cardsBoardHtml = document.createElement('div');
         this.cardsBoardHtml.classList = 'cards-board';
     }
 
     render()
     {
-        for(let i = 0; i < this.cartsBoard.getLines().length; i++) {
-            let line = this.cartsBoard.getLines()[i];
+        for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
+            let line = this.cardsBoard.getLines()[i];
             for(let i = 0; i < line.getCards().length; i++) {
                 let cart = line.getCards()[i];
                 let cartItem = document.createElement('div');
@@ -29,9 +29,10 @@ class CardsBoard
 
     update()
     {
+        this.cardsBoard.update();
         this.cardsBoardHtml.innerHTML = '';
-        for(let i = 0; i < this.cartsBoard.getLines().length; i++) {
-            let line = this.cartsBoard.getLines()[i];
+        for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
+            let line = this.cardsBoard.getLines()[i];
             for(let i = 0; i < line.getCards().length; i++) {
                 let cart = line.getCards()[i];
                 let cartItem = document.createElement('div');
