@@ -3,28 +3,33 @@ body {
     margin: 0 auto;
 }
 .cards-board {
-    width: 302px;
-    height: 300px;
-    border: 1px solid #000;
+    width: 320px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    gap: 10px;
 } 
 
 .cards-board__item {
     border: 1px solid #000;
     width: 100px;
-    height: 100px;
+    height: 150px;
     box-sizing: border-box;
+    border-radius: 10px;
+    padding: 4px;
 }
+
 .player {
-    width: 302px;
+    width: 320px;
+    margin: 20px 0;
 }
 
 .player__cart 
 {
     border: 1px solid #000;
     width: 100px;
-    height: 100px;
+    height: 150px;
     margin: 0 auto;
+    padding: 4px;
+    border-radius: 10px;;
 }
