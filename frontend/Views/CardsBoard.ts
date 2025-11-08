@@ -1,5 +1,13 @@
+import * as Core from '../Core';
+
 class CardsBoard
 {
+    private cartsBoard: Core.CardsBoard;
+
+    constructor(cardsBoard: Core.CardsBoard)
+    {
+        this.cartsBoard = cardsBoard;
+    }
     render()
     {
         let cardsBoard = document.createElement('div');

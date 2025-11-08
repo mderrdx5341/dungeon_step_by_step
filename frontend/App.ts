@@ -1,8 +1,6 @@
 import './App.scss';
-import Cards from './Views/CardsBoard';
-import Player from './Views/Player';
-import Keyboard from './Views/Keybord';
-import CardsBoard from './Views/CardsBoard';
+import * as Core from './Core';
+import * as Views from './Views';
 
 class App
 {
@@ -15,9 +13,10 @@ class App
 
     run()
     {
-        let cards = new CardsBoard();
-        let player = new Player();
-        let keyboard = new Keyboard();
+        let cardsBoard = new Core.CardsBoard();
+        let cardsBoardView = new Views.CardsBoard(cardsBoard);
+        let playerView = new Views.Player();
+        let keyboard = new Views.Keyboard();
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
             console.log('ah aha ahaha')
         });
@@ -27,8 +26,8 @@ class App
         });
 
 
-        this.rootNode.appendChild(cards.render());
-        this.rootNode.appendChild(player.render());
+        this.rootNode.appendChild(cardsBoardView.render());
+        this.rootNode.appendChild(playerView.render());
     }
 }
 
