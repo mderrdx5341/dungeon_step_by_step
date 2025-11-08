@@ -2,29 +2,32 @@ import CardsLine from "./CardsLine";
 
 class CardsBoard
 {
+    private cardsLine: CardsLine[];
 
     constructor()
     {
-
-    }
-
-    public getLines(): CardsLine[]
-    {
-        return [
+        this.cardsLine = [
             new CardsLine(),
             new CardsLine(),
             new CardsLine(),
         ];
     }
 
-    public update(): void
+    public getLines(): CardsLine[]
     {
-        
+        return this.cardsLine;
     }
 
-    generate()
+    public update(): void
     {
+        this.cardsLine[2] = this.cardsLine[1];
+        this.cardsLine[1] = this.cardsLine[0];
+        this.cardsLine[0] = this.generateLine();
+    }
 
+    generateLine()
+    {
+        return new CardsLine();
     }
 }
 

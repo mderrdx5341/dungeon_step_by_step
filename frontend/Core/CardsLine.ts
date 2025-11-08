@@ -5,16 +5,16 @@ class CardsLine
     private cards: Card[];
     constructor()
     {
-
+        this.cards = [
+            new Card(Math.floor(Math.random() * 100).toString()),
+            new Card(Math.floor(Math.random() * 100).toString()),
+            new Card(Math.floor(Math.random() * 100).toString())
+        ]
     }
 
     public getCards(): Card[]
     {
-        return [
-            new Card("1"),
-            new Card("2"),
-            new Card("3")
-        ]
+        return this.cards;
     }
 }
 
