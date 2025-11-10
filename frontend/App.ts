@@ -23,7 +23,7 @@ class App
             
             cardsBoardView.newLine();
     
-            let damage = cardsBoard.getLineUp().getDamage();
+            let damage = cardsBoard.getCardLineUp().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
@@ -32,7 +32,7 @@ class App
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
             cardsBoardView.newLine();
 
-            let damage = cardsBoard.getLineRight().getDamage();
+            let damage = cardsBoard.getCardLineRight().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
@@ -41,7 +41,7 @@ class App
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
             cardsBoardView.newLine();
-            let damage = cardsBoard.getLineLeft().getDamage();
+            let damage = cardsBoard.getCardLineLeft().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();

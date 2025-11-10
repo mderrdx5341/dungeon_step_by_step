@@ -18,17 +18,17 @@ class CardsBoard
         return this.cardsLine;
     }
 
-    public getLineUp()
+    public getCardLineUp()
     {
         return this.getLines()[2].getCards()[1];
     }
 
-    public getLineLeft()
+    public getCardLineLeft()
     {
         return this.getLines()[2].getCards()[0];
     }
 
-    public getLineRight()
+    public getCardLineRight()
     {
         return this.getLines()[2].getCards()[2];
     }
