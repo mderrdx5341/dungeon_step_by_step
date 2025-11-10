@@ -18,16 +18,12 @@ class CardsBoard
         this.cardsBoardPanelHtml.classList = 'cards-board__panel';
         this.cardsBoardPanelHtml.addEventListener('transitionend', (e) => {
             this.animation = false;
-            console.log('end');
             this.cardsBoardPanelHtml.classList.add('transition-none');
-            console.log('none');
             let top = this.getTop(this.cardsBoardPanelHtml.style.top);
-            console.log(top);
             this.cardsBoardPanelHtml.style.top = (top - 100) + 'px';
-            console.log('pre-start');
             this.animation = true;
             this.update();
-    });
+        });
 
         this.cardsBoardHtml.appendChild(this.cardsBoardPanelHtml)
     }

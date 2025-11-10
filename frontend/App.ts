@@ -34,7 +34,6 @@ class App
             cardsBoardView.newLine();
 
             let damage = cardsBoard.getLines()[2].getCards()[2].getDamage();
-            console.log(damage);
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
@@ -44,7 +43,6 @@ class App
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
             cardsBoardView.newLine();
             let damage = cardsBoard.getLines()[2].getCards()[0].getDamage();
-            console.log(damage);
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
