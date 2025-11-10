@@ -2,13 +2,43 @@ body {
     width: 300px;
     margin: 0 auto;
 }
-.cards-board {
+
+#app {
     width: 320px;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.cards-board {
+    position: relative;
+    width: 320px;
     gap: 10px;
-} 
+    left: 0;
+    top: 0;
+    transition: top 1s ease-in-out;
+    height: 512px;
+}
+
+.cards-board__panel {
+    position: absolute;
+    width: 320px;
+    gap: 10px;
+    left: 0;
+    top: 0;
+    transition: top 1s ease-in-out;
+    z-index: 0;
+}
+
+.cards-board__panel.transition-none{
+  transition: none;
+}
+
+.cards_board__line{
+    display: flex;
+    gap: 20px;
+    margin: 0 0 20px 0;
+}
 
 .cards-board__item {
     border: 1px solid #000;
@@ -31,5 +61,8 @@ body {
     height: 150px;
     margin: 0 auto;
     padding: 4px;
-    border-radius: 10px;;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
 }

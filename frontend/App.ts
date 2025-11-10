@@ -20,6 +20,9 @@ class App
         let keyboard = new Views.Keyboard();
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
+            
+            cardsBoardView.newLine();
+            
             let damage = cardsBoard.getLines()[2].getCards()[1].getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
@@ -28,6 +31,8 @@ class App
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
+            cardsBoardView.newLine();
+
             let damage = cardsBoard.getLines()[2].getCards()[2].getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
@@ -36,6 +41,7 @@ class App
         });
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
+            cardsBoardView.newLine();
             let damage = cardsBoard.getLines()[2].getCards()[0].getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
