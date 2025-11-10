@@ -26,7 +26,9 @@ class App
             let damage = cardsBoard.getCardLineUp().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
+            playerView.moveCenter();
             playerView.update();
+            
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
@@ -36,6 +38,7 @@ class App
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
+            playerView.moveRight();
 
         });
 
@@ -45,6 +48,7 @@ class App
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
+            playerView.moveLeft();
         });
 
 

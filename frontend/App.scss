@@ -52,9 +52,10 @@ body {
 
 .player {
     width: 340px;
+    position: relative;
 }
 
-.player__cart 
+.player__card 
 {
     border: 1px solid #000;
     width: 100px;
@@ -63,6 +64,19 @@ body {
     padding: 4px;
     border-radius: 10px;
     background: #fff;
-    position: relative;
+    position: absolute;
     z-index: 10;
+}
+
+.player__card.player__card--center {
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.player__card.player__card--left {
+    left: -5px;
+}
+
+.player__card.player__card--right {
+    right: -5px;
 }

@@ -12,7 +12,7 @@ class Player
         this.playerHtml = document.createElement('div');
         this.playerHtml.classList = 'player';
         this.playerCard = document.createElement('div');
-        this.playerCard.classList = 'player__cart';
+        this.playerCard.classList = 'player__card player__card--center';
     }
 
     render()
@@ -27,6 +27,18 @@ class Player
     update()
     {
        this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth(); 
+    }
+
+    moveCenter() {
+        this.playerCard.classList = 'player__card player__card--center';
+    }
+
+    moveRight() {
+        this.playerCard.classList = 'player__card player__card--right';
+    }
+
+    moveLeft() {
+        this.playerCard.classList = 'player__card player__card--left';
     }
 }
 
