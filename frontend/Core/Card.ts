@@ -6,7 +6,7 @@ class Card
     constructor(title: string)
     {
         this.title = title;
-        this.damage = Math.floor(Math.random() * 100);
+        this.damage = Math.floor(Math.random() * 10);
     }
 
     public getTitle(): string
