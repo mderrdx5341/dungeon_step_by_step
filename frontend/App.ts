@@ -20,7 +20,7 @@ class App
         let keyboard = new Views.Keyboard();
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            let isStep = playerView.setLine('center');
+            let isStep = playerView.MoveTo('center');
             if (isStep) {
                 cardsBoardView.newLine();
                 let damage = cardsBoard.getCardLineRight().getDamage();
@@ -31,7 +31,7 @@ class App
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
-            let isStep = playerView.setLine('right');
+            let isStep = playerView.MoveTo('right');
             if (isStep) {
                 cardsBoardView.newLine();
                 let damage = cardsBoard.getCardLineRight().getDamage();
@@ -42,7 +42,7 @@ class App
         });
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {            
-            let isStep = playerView.setLine('left');
+            let isStep = playerView.MoveTo('left');
             if (isStep) {
                 cardsBoardView.newLine();
                 let damage = cardsBoard.getCardLineRight().getDamage();

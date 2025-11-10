@@ -36,50 +36,48 @@ class Player
        this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth(); 
     }
 
-    setLine(newLine)
+    MoveTo(move)
     {
-        console.log('//newline', newLine);
-        console.log('//oldline' ,this.line);
-        if (this.line == 'center' && newLine == 'center') {
+        if (this.line == 'center' && move == 'center') {
             this.line = 'center';
             this.moveCenter();
             return true;
         } 
-        else if (this.line == 'right' && newLine == 'center') 
+        else if (this.line == 'right' && move == 'center') 
         {
             this.line = 'right';
             return true;
         } 
-        else if (this.line == 'right' && newLine == 'left') 
+        else if (this.line == 'right' && move == 'left') 
         {
             this.line = 'center';
             this.moveCenter();
             return true;
         }
-        else if (this.line == 'right' && newLine == 'right')
+        else if (this.line == 'right' && move == 'right')
         {
             return false;
         } 
-        else if (this.line == 'left' && newLine == 'center') 
+        else if (this.line == 'left' && move == 'center') 
         {
             this.line = 'left';
             this.moveLeft();
             return true;
         } 
-         else if (this.line == 'left' && newLine == 'right') {
+         else if (this.line == 'left' && move == 'right') {
             this.line = 'center';
             this.moveCenter();
             return true;
         } 
-        else if (this.line == 'left' && newLine == 'left') {
+        else if (this.line == 'left' && move == 'left') {
             return false;
         } 
-        else if (this.line == 'center' && newLine == 'right') {
+        else if (this.line == 'center' && move == 'right') {
             this.line = 'right';
             this.moveRight();
             return true;
         }
-        else if (this.line == 'center' && newLine == 'left')
+        else if (this.line == 'center' && move == 'left')
         {
             this.line = 'left';
             this.moveLeft();
