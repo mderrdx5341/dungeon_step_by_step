@@ -20,35 +20,36 @@ class App
         let keyboard = new Views.Keyboard();
 
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            
-            cardsBoardView.newLine();
-    
-            let damage = cardsBoard.getCardLineUp().getDamage();
-            let newPlayerHealts = player.getHealth() - damage;
-            player.setHealts(newPlayerHealts);
-            playerView.moveCenter();
-            playerView.update();
-            
+            let isStep = playerView.setLine('center');
+            if (isStep) {
+                cardsBoardView.newLine();
+                let damage = cardsBoard.getCardLineRight().getDamage();
+                let newPlayerHealts = player.getHealth() - damage;
+                player.setHealts(newPlayerHealts);
+                playerView.update();
+            }
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
-            cardsBoardView.newLine();
-
-            let damage = cardsBoard.getCardLineRight().getDamage();
-            let newPlayerHealts = player.getHealth() - damage;
-            player.setHealts(newPlayerHealts);
-            playerView.update();
-            playerView.moveRight();
-
+            let isStep = playerView.setLine('right');
+            if (isStep) {
+                cardsBoardView.newLine();
+                let damage = cardsBoard.getCardLineRight().getDamage();
+                let newPlayerHealts = player.getHealth() - damage;
+                player.setHealts(newPlayerHealts);
+                playerView.update();
+            }
         });
 
-        keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
-            cardsBoardView.newLine();
-            let damage = cardsBoard.getCardLineLeft().getDamage();
-            let newPlayerHealts = player.getHealth() - damage;
-            player.setHealts(newPlayerHealts);
-            playerView.update();
-            playerView.moveLeft();
+        keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {            
+            let isStep = playerView.setLine('left');
+            if (isStep) {
+                cardsBoardView.newLine();
+                let damage = cardsBoard.getCardLineRight().getDamage();
+                let newPlayerHealts = player.getHealth() - damage;
+                player.setHealts(newPlayerHealts);
+                playerView.update();
+            }
         });
 
 
