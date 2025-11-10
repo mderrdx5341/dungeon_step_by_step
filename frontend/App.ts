@@ -22,9 +22,8 @@ class App
         keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
             
             cardsBoardView.newLine();
-            
-            let damage = cardsBoard.getLines()[2].getCards()[1].getDamage();
-            console.log(damage);
+    
+            let damage = cardsBoard.getLineUp().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
@@ -33,7 +32,7 @@ class App
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
             cardsBoardView.newLine();
 
-            let damage = cardsBoard.getLines()[2].getCards()[2].getDamage();
+            let damage = cardsBoard.getLineRight().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
@@ -42,7 +41,7 @@ class App
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
             cardsBoardView.newLine();
-            let damage = cardsBoard.getLines()[2].getCards()[0].getDamage();
+            let damage = cardsBoard.getLineLeft().getDamage();
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
