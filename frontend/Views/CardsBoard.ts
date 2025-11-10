@@ -26,7 +26,7 @@ class CardsBoard
             this.cardsBoardPanelHtml.style.top = (top - 100) + 'px';
             console.log('pre-start');
             this.animation = true;
-            //line.getlineWar().classList.remove('transition-none');
+            this.update();
     });
 
         this.cardsBoardHtml.appendChild(this.cardsBoardPanelHtml)

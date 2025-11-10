@@ -28,7 +28,6 @@ class App
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
-            cardsBoardView.update();
         });
 
         keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
@@ -39,7 +38,7 @@ class App
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
-            cardsBoardView.update();
+
         });
 
         keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {
@@ -49,7 +48,6 @@ class App
             let newPlayerHealts = player.getHealth() - damage;
             player.setHealts(newPlayerHealts);
             playerView.update();
-            cardsBoardView.update();
         });
 
 
