@@ -5,6 +5,7 @@ import * as Views from './Views';
 class App
 {
     private rootNode: HTMLElement;
+    private keyboard: Views.Keyboard;
 
     constructor(selector: string)
     {
@@ -13,13 +14,16 @@ class App
 
     run()
     {
+        this.keyboard = new Views.Keyboard();
         let cardsBoard = new Core.CardsBoard();
         let cardsBoardView = new Views.CardsBoard(cardsBoard);
         let player = new Core.Player();
         let playerView = new Views.Player(player);
-        let keyboard = new Views.Keyboard();
+        
 
-        keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
+        this.keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
+            
+
             let isStep = playerView.MoveTo('center');
             if (isStep) {
                 cardsBoardView.newLine();
@@ -40,7 +44,8 @@ class App
             }
         });
 
-        keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
+        this.keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
+            this.keyboard.setBlocked(true);
             let isStep = playerView.MoveTo('right');
             if (isStep) {
                 cardsBoardView.newLine();
@@ -59,9 +64,11 @@ class App
                 }
                 playerView.update();
             }
+            this.keyboard.setBlocked(false);
         });
 
-        keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {            
+        this.keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {    
+            this.keyboard.setBlocked(true);        
             let isStep = playerView.MoveTo('left');
             if (isStep) {
                 cardsBoardView.newLine();
@@ -80,6 +87,7 @@ class App
                 }
                 playerView.update();
             }
+            this.keyboard.setBlocked(false);
         });
 
 
@@ -93,3 +101,5 @@ class App
         (new App('#app')).run();
     });
 })();
+
+export default App;
