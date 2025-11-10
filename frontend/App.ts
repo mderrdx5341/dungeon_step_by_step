@@ -23,9 +23,19 @@ class App
             let isStep = playerView.MoveTo('center');
             if (isStep) {
                 cardsBoardView.newLine();
-                let damage = cardsBoard.getCardLineRight().getDamage();
-                let newPlayerHealts = player.getHealth() - damage;
-                player.setHealts(newPlayerHealts);
+                if (playerView.getLine() == 'center') {
+                    let damage = cardsBoard.getCardLineUp().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'right') {
+                    let damage = cardsBoard.getCardLineRight().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'left') {
+                    let damage = cardsBoard.getCardLineLeft().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                }
                 playerView.update();
             }
         });
@@ -34,9 +44,19 @@ class App
             let isStep = playerView.MoveTo('right');
             if (isStep) {
                 cardsBoardView.newLine();
-                let damage = cardsBoard.getCardLineRight().getDamage();
-                let newPlayerHealts = player.getHealth() - damage;
-                player.setHealts(newPlayerHealts);
+                if (playerView.getLine() == 'center') {
+                    let damage = cardsBoard.getCardLineUp().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'right') {
+                    let damage = cardsBoard.getCardLineRight().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'left') {
+                    let damage = cardsBoard.getCardLineLeft().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                }
                 playerView.update();
             }
         });
@@ -45,9 +65,19 @@ class App
             let isStep = playerView.MoveTo('left');
             if (isStep) {
                 cardsBoardView.newLine();
-                let damage = cardsBoard.getCardLineRight().getDamage();
-                let newPlayerHealts = player.getHealth() - damage;
-                player.setHealts(newPlayerHealts);
+                if (playerView.getLine() == 'center') {
+                    let damage = cardsBoard.getCardLineUp().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'right') {
+                    let damage = cardsBoard.getCardLineRight().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                } else if (playerView.getLine() == 'left') {
+                    let damage = cardsBoard.getCardLineLeft().getDamage();
+                    let newPlayerHealts = player.getHealth() - damage;
+                    player.setHealts(newPlayerHealts);
+                }
                 playerView.update();
             }
         });

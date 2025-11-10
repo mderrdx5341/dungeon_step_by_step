@@ -40,7 +40,6 @@ class Player
     {
         if (this.line == 'center' && move == 'center') {
             this.line = 'center';
-            this.moveCenter();
             return true;
         } 
         else if (this.line == 'right' && move == 'center') 
@@ -87,6 +86,11 @@ class Player
         //this.line = newLine;
 
         this.update();
+    }
+
+    getLine()
+    {
+        return this.line;
     }
 
     moveCenter() {
