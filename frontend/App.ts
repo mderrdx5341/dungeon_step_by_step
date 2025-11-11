@@ -32,15 +32,15 @@ class App
         
 
         this.keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            this.playCartMoveTo('center');
+            this.playerCartMoveTo('center');
         });
 
         this.keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
-            this.playCartMoveTo('right');
+            this.playerCartMoveTo('right');
         });
 
         this.keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {    
-            this.playCartMoveTo('left');
+            this.playerCartMoveTo('left');
 
         });
 
@@ -48,7 +48,7 @@ class App
         this.rootNode.appendChild(this.playerView.render());
     }
 
-    playCartMoveTo(MoveTo)
+    playerCartMoveTo(MoveTo)
     {
         let isStep = this.playerView.MoveTo(MoveTo);
         if (isStep && this.cardsBoardView.isAnimation()) {

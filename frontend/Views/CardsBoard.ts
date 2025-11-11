@@ -59,6 +59,17 @@ class CardsBoard
         this.updateHtml();
     }
 
+    // updateHtml()
+    // {
+    //     let firstLine;
+    //     let lasrtLine;
+    //     blockCards.animate();
+    //     firstLine.remove();
+    //     lastLine.Visible(
+    //          prepend(line).
+    //        );
+    // }
+
     updateHtml()
     {
         for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
