@@ -16,14 +16,14 @@ class Card
         return this.title;
     }
 
-    public getHealth()
+    public getHealth(): number
     {
         return this.health;
     }
 
-    public getDamage()
+    public getDamage(): number
     {
-        return this.damage;
+        return this.damage + this.getHealth();
     }
 }
 

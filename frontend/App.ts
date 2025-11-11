@@ -10,6 +10,7 @@ class App
     private playerView: Views.Player;
     private cardsBoard: Core.CardsBoard;
     private cardsBoardView: Views.CardsBoard;
+    private experience: number;
 
     constructor(selector: string)
     {
@@ -18,6 +19,7 @@ class App
         this.playerView = new Views.Player(this.player);
         this.cardsBoard = new Core.CardsBoard();
         this.cardsBoardView = new Views.CardsBoard(this.cardsBoard);
+        this.experience = 0;
     }
 
     run()
@@ -49,18 +51,34 @@ class App
         let isStep = this.playerView.MoveTo(MoveTo);
         if (isStep && this.cardsBoardView.isAnimation()) {
             this.cardsBoardView.newLine();
-            let damage = 0;
+            let card = null;
             if (this.playerView.getLine() == 'center') {
-                damage = this.cardsBoard.getCardLineUp().getDamage();
+                card = this.cardsBoard.getCardLineUp();
             } else if (this.playerView.getLine() == 'right') {
-                damage = this.cardsBoard.getCardLineRight().getDamage();
+                card = this.cardsBoard.getCardLineRight();
             } else if (this.playerView.getLine() == 'left') {
-                damage = this.cardsBoard.getCardLineLeft().getDamage();  
+                card = this.cardsBoard.getCardLineLeft();  
             }
-
-            this.player.setHealts(this.player.getHealth() - damage);
+            if (this.player.getDamage() > card.getHealth()) {
+                let experienceCof = this.player.getDamage() - card.getHealth();
+                if (experienceCof > 3) {
+                    this.playerView.addExperience(2);
+                } else if( experienceCof > 15) {
+                    this.playerView.addExperience(3);
+                } else {
+                    this.playerView.addExperience(1);
+                }
+            }
+            this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
+            this.player.setHealts(this.player.getHealth() - card.getDamage());
+            
         }
         this.playerView.update();
+    }
+
+    public addExperience(experience: number)
+    {
+        this.experience += experience;
     }
 }
 

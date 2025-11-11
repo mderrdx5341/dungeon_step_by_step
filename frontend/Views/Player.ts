@@ -17,6 +17,11 @@ class Player
         this.playerCard.classList = 'player__card player__card--center';
     }
 
+    addExperience(experience: number)
+    {
+        this.player.addExperience(experience);
+    }
+
     getLinePosition()
     {
         return this.line;
@@ -33,7 +38,8 @@ class Player
 
     update()
     {
-       this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth() + '<br>' + this.player.getDamage(); 
+       this.playerCard.innerHTML = this.player.getName() + '<br>health: ' + this.player.getHealth() + '<br>damage: ' + this.player.getDamage() + 
+       '<br>experience: ' + this.player.getExperience(); 
     }
 
     MoveTo(move)
