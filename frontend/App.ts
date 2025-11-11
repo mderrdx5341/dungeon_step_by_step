@@ -49,16 +49,16 @@ class App
         let isStep = this.playerView.MoveTo(MoveTo);
         if (isStep && this.cardsBoardView.isAnimation()) {
             this.cardsBoardView.newLine();
+            let damage = 0;
             if (this.playerView.getLine() == 'center') {
-                let damage = this.cardsBoard.getCardLineUp().getDamage();
-                this.player.setHealts(this.player.getHealth() - damage);
+                damage = this.cardsBoard.getCardLineUp().getDamage();
             } else if (this.playerView.getLine() == 'right') {
-                let damage = this.cardsBoard.getCardLineRight().getDamage();
-                this.player.setHealts(this.player.getHealth() - damage);
+                damage = this.cardsBoard.getCardLineRight().getDamage();
             } else if (this.playerView.getLine() == 'left') {
-                let damage = this.cardsBoard.getCardLineLeft().getDamage();  
-                this.player.setHealts(this.player.getHealth() - damage);
+                damage = this.cardsBoard.getCardLineLeft().getDamage();  
             }
+
+            this.player.setHealts(this.player.getHealth() - damage);
         }
         this.playerView.update();
     }
