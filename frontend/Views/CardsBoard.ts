@@ -5,7 +5,7 @@ class CardsBoard
     private cardsBoard: Core.CardsBoard;
     private cardsBoardHtml: HTMLElement;
     private cardsBoardPanelHtml: HTMLElement;
-    private animation: boolean;
+    private _animation: boolean;
 
     constructor(cardsBoard: Core.CardsBoard)
     {
@@ -13,19 +13,31 @@ class CardsBoard
         this.cardsBoardHtml = document.createElement('div');
         this.cardsBoardHtml.classList = 'cards-board';
 
-        this.animation = true;
+        this._animation = true;
         this.cardsBoardPanelHtml = document.createElement('div');
         this.cardsBoardPanelHtml.classList = 'cards-board__panel';
+
+        this.cardsBoardPanelHtml.addEventListener('transitionstart', (e) => {
+            console.log('///', 'down key');
+            this._animation = false;
+        });
+
         this.cardsBoardPanelHtml.addEventListener('transitionend', (e) => {
-            this.animation = false;
+            console.log('///', 'key up');
+            this._animation = false;
             this.cardsBoardPanelHtml.classList.add('transition-none');
             let top = this.getTop(this.cardsBoardPanelHtml.style.top);
             this.cardsBoardPanelHtml.style.top = (top - 100) + 'px';
-            this.animation = true;
+            this._animation = true;
             this.update();
         });
 
         this.cardsBoardHtml.appendChild(this.cardsBoardPanelHtml)
+    }
+
+    isAnimation()
+    {
+        return this._animation;
     }
 
     render()

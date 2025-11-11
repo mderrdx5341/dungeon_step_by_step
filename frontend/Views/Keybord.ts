@@ -8,23 +8,16 @@ class Keyboard
         this._isBlocked = false;
         this.keys = new Map();
         window.addEventListener('keyup', (e) => {
+            // if(this.isBlocked()) {
+            //     return;
+            // } 
 
 
-            if(this.keys.has(e.code)) {
-                console.log(this._isBlocked);
-                if(this.isBlocked()) {
-                    return;
-                } 
-                this.setBlocked(true);
-                
-                console.log(this._isBlocked);
-
+            if(this.keys.has(e.code) && !this._isBlocked) {
                 let f = this.keys.get(e.code);
-                f(e);
-
-                this.setBlocked(false);
+                f(e);  
             }
-
+            // this.setBlocked(false);
         });
 
     }

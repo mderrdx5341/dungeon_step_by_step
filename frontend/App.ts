@@ -22,10 +22,8 @@ class App
         
 
         this.keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
-            
-
             let isStep = playerView.MoveTo('center');
-            if (isStep) {
+            if (isStep && cardsBoardView.isAnimation()) {
                 cardsBoardView.newLine();
                 if (playerView.getLine() == 'center') {
                     let damage = cardsBoard.getCardLineUp().getDamage();
@@ -45,9 +43,9 @@ class App
         });
 
         this.keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
-            this.keyboard.setBlocked(true);
+
             let isStep = playerView.MoveTo('right');
-            if (isStep) {
+            if (isStep && cardsBoardView.isAnimation()) {
                 cardsBoardView.newLine();
                 if (playerView.getLine() == 'center') {
                     let damage = cardsBoard.getCardLineUp().getDamage();
@@ -64,13 +62,13 @@ class App
                 }
                 playerView.update();
             }
-            this.keyboard.setBlocked(false);
+
         });
 
         this.keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {    
-            this.keyboard.setBlocked(true);        
+       
             let isStep = playerView.MoveTo('left');
-            if (isStep) {
+            if (isStep && cardsBoardView.isAnimation()) {
                 cardsBoardView.newLine();
                 if (playerView.getLine() == 'center') {
                     let damage = cardsBoard.getCardLineUp().getDamage();
@@ -87,7 +85,7 @@ class App
                 }
                 playerView.update();
             }
-            this.keyboard.setBlocked(false);
+
         });
 
 
