@@ -1,5 +1,6 @@
 import './App.scss';
 import * as Core from './Core';
+import ICartRrepository from './Core/ICartRepository';
 import * as Views from './Views';
 
 class App
@@ -11,13 +12,14 @@ class App
     private cardsBoard: Core.CardsBoard;
     private cardsBoardView: Views.CardsBoard;
     private experience: number;
+    private dbCart: ICartRrepository;
 
     constructor(selector: string)
     {
         this.rootNode = document.querySelector(selector);
         this.player = new Core.Player();
         this.playerView = new Views.Player(this.player);
-        this.cardsBoard = new Core.CardsBoard();
+        this.cardsBoard = new Core.CardsBoard(this.dbCart);
         this.cardsBoardView = new Views.CardsBoard(this.cardsBoard);
         this.experience = 0;
     }

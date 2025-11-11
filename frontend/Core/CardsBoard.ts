@@ -1,15 +1,17 @@
 import CardsLine from "./CardsLine";
+import ICartRrepository from "./ICartRepository";
 
 class CardsBoard
 {
     private cardsLine: CardsLine[];
+    private dbCards: ICartRrepository;
 
-    constructor()
+    constructor(cartRepository: ICartRrepository)
     {
         this.cardsLine = [
-            new CardsLine(),
-            new CardsLine(),
-            new CardsLine(),
+            new CardsLine(cartRepository),
+            new CardsLine(cartRepository),
+            new CardsLine(cartRepository),
         ];
     }
 
@@ -47,7 +49,7 @@ class CardsBoard
 
     generateLine()
     {
-        return new CardsLine();
+        return new CardsLine(this.dbCards);
     }
 }
 

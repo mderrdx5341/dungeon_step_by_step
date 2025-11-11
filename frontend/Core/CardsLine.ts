@@ -1,9 +1,10 @@
 import Card from './Card';
+import ICartRrepository from './ICartRepository'; 
 
 class CardsLine
 {
     private cards: Card[];
-    constructor()
+    constructor(cartRepository: ICartRrepository)
     {
         this.cards = [
             new Card('Wrong'),
