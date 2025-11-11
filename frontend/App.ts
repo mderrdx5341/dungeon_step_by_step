@@ -31,15 +31,15 @@ class App
         this.playerView = new Views.Player(this.player);
         
 
-        this.keyboard.addActionFromKey('ArrowUp', (e: KeyboardEvent): void => {
+        this.keyboard.addActionForKey('ArrowUp', (e: KeyboardEvent): void => {
             this.playerCartMoveTo('center');
         });
 
-        this.keyboard.addActionFromKey('ArrowRight', (e: KeyboardEvent): void => {
+        this.keyboard.addActionForKey('ArrowRight', (e: KeyboardEvent): void => {
             this.playerCartMoveTo('right');
         });
 
-        this.keyboard.addActionFromKey('ArrowLeft', (e: KeyboardEvent): void => {    
+        this.keyboard.addActionForKey('ArrowLeft', (e: KeyboardEvent): void => {    
             this.playerCartMoveTo('left');
 
         });

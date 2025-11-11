@@ -16,7 +16,7 @@ class Keyboard
 
     }
 
-    addActionFromKey(key: string, action: (e: KeyboardEvent) => void) {
+    addActionForKey(key: string, action: (e: KeyboardEvent) => void) {
         this.keys.set(key,action); 
     }
 
