@@ -33,6 +33,11 @@ class CardsBoard
         return this.getLines()[2].getCards()[2];
     }
 
+    public getFirstLine()
+    {
+        return this.cardsLine[0];
+    }
+
     public update(): void
     {
         this.cardsLine[2] = this.cardsLine[1];

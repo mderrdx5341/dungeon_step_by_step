@@ -1,27 +1,34 @@
 class Player
 {
-    private name: string;
-    private health: number;
+    private _name: string;
+    private _health: number;
+    private _damage: number;
 
     constructor()
     {
-        this.name = 'player';
-        this.health = 1000;
+        this._name = 'player';
+        this._health = 1000;
+        this._damage = 20;
     }
 
     getName()
     {
-        return this.name;
+        return this._name;
+    }
+
+    getDamage()
+    {
+        return this._damage;
     }
 
     getHealth()
     {
-        return this.health;
+        return this._health;
     }
 
     setHealts(health: number)
     {
-        this.health = health;
+        this._health = health;
     }
 }
 

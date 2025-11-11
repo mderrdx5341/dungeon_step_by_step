@@ -33,7 +33,7 @@ class Player
 
     update()
     {
-       this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth(); 
+       this.playerCard.innerHTML = this.player.getName() + '<br>' + this.player.getHealth() + '<br>' + this.player.getDamage(); 
     }
 
     MoveTo(move)
