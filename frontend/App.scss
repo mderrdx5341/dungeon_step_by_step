@@ -37,8 +37,10 @@ body {
 }
 
 .cards_board__line{
+    position: absolute;
     display: flex;
     gap: 20px;
+    transition: top 1s ease-in-out;
 }
 
 .cards-board__item {
