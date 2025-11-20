@@ -62,13 +62,15 @@ class App
                 card = this.cardsBoard.getCardLineLeft();  
             }
             if (this.player.getDamage() > card.getHealth()) {
-                let experienceCof = this.player.getDamage() - card.getHealth();
-                if (experienceCof > 3) {
-                    this.playerView.addExperience(2);
-                } else if( experienceCof > 15) {
+                if (card.getHealth() > 6) {
                     this.playerView.addExperience(3);
+                    this.player.setDamage(this.player.getDamage() + 3);
+                } else if (card.getHealth() > 3) {
+                    this.playerView.addExperience(2);
+                    this.player.setDamage(this.player.getDamage() + 2);
                 } else {
                     this.playerView.addExperience(1);
+                    this.player.setDamage(this.player.getDamage() + 1);
                 }
             }
             this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
