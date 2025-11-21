@@ -16,7 +16,6 @@ body {
     gap: 10px;
     left: 0;
     top: 0;
-    transition: top 1s ease-in-out;
     height: 482px;
 }
 
@@ -26,14 +25,9 @@ body {
     gap: 10px;
     left: 0;
     top: 0;
-    transition: top 1s ease-in-out;
     z-index: 0;
     display: flex;
     flex-wrap: wrap;
-}
-
-.cards-board__panel.transition-none{
-  transition: none;
 }
 
 .cards_board__line{

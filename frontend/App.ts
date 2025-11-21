@@ -63,16 +63,16 @@ class App
             if (this.player.getDamage() > card.getHealth()) {
                 if (card.getHealth() > 6) {
                     this.playerView.addExperience(3);
-                    //this.player.setDamage(this.player.getDamage() + 3);
+                    this.player.setDamage(this.player.getDamage() + 3);
                 } else if (card.getHealth() > 3) {
                     this.playerView.addExperience(2);
-                    //this.player.setDamage(this.player.getDamage() + 2);
+                    this.player.setDamage(this.player.getDamage() + 2);
                 } else {
                     this.playerView.addExperience(1);
                     this.player.setDamage(this.player.getDamage() + 1);
                 }
             }
-            //this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
+            this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
             this.player.setHealts(this.player.getHealth() - card.getDamage());
             this.cardsBoardView.newLine();
             

@@ -27,10 +27,15 @@ class CardsBoard
         });
 
         this.cardsBoardPanelHtml.addEventListener('transitionend', (e) => {
-            this._animation = false;
-            this.cardsBoardPanelHtml.classList.add('transition-none');
-            this._animation = true;
-            this.cardsBoardPanelHtml.prepend(this.lines[0]);
+            const targetElement = e.target as HTMLElement;
+            if(targetElement.style.top === '160px') {
+                this._animation = false;
+                this.cardsBoardPanelHtml.classList.add('transition-none');
+                this._animation = true;
+                this.cardsBoard.update();
+                this.updateHtml2();
+                this.cardsBoardPanelHtml.prepend(this.lines[0]);
+            }
         });
 
         this.cardsBoardHtml.appendChild(this.cardsBoardPanelHtml)
@@ -49,15 +54,9 @@ class CardsBoard
 
     newLine()
     {
-        this.cardsBoardPanelHtml.classList.remove('transition-none');
         for(let i = 0; i < this.lines.length; i++) {
             this.lines[i].style.top = (this.getTop(this.lines[i].style.top) + 20 + height) + 'px';
         }
-
-        this.cardsBoard.update();
-        this.updateHtml2();
-        this.cardsBoardPanelHtml.classList.add('transition-none');
-        
     }
 
     updateHtml()
