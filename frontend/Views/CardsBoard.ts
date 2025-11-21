@@ -92,7 +92,6 @@ class CardsBoard
 
         for(let i = 0; i < line.getCards().length; i++) {
             let cart = line.getCards()[i];
-            let lineCart = line.getCards()[i];
             let cartItem = document.createElement('div');
             cartItem.classList = 'cards-board__item';
             cartItem.innerHTML = cart.getTitle() + '<br>' + cart.getDamage();
