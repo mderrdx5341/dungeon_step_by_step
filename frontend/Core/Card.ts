@@ -1,29 +1,27 @@
+import IEnemies from "./IEnemies";
+
 class Card
 {
-    private title: string;
-    private damage: number;
-    private health: number;
+    private enemy: IEnemies;
 
-    constructor(title: string)
+    constructor(enemy: IEnemies)
     {
-        this.title = title;
-        this.health = Math.floor(Math.random() * 10);
-        this.damage = 0;
+        this.enemy = enemy;
     }
 
     public getTitle(): string
     {
-        return this.title;
+        return this.enemy.getName();
     }
 
     public getHealth(): number
     {
-        return this.health;
+        return this.enemy.getHealth();
     }
 
     public getDamage(): number
     {
-        return this.damage + this.getHealth();
+        return this.enemy.getDamage();
     }
 }
 

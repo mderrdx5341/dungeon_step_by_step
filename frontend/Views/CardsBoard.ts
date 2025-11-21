@@ -71,11 +71,9 @@ class CardsBoard
             top += height + 20;
 
             for(let i = 0; i < line.getCards().length; i++) {
-                let cart = line.getCards()[i];
-                let cartItem = document.createElement('div');
-                cartItem.classList = 'cards-board__item';
-                cartItem.innerHTML = cart.getTitle() + '<br>' + cart.getDamage();
-                lineHtml.appendChild(cartItem);
+                let card = line.getCards()[i];
+                let cardHtml = new Views.Card(card); 
+                lineHtml.appendChild(cardHtml.html());
             }
             this.lines.push(lineHtml);
             this.cardsBoardPanelHtml.appendChild(lineHtml);
@@ -91,11 +89,9 @@ class CardsBoard
         lineHtml.style.top = 0 + 'px';
 
         for(let i = 0; i < line.getCards().length; i++) {
-            let cart = line.getCards()[i];
-            let cartItem = document.createElement('div');
-            cartItem.classList = 'cards-board__item';
-            cartItem.innerHTML = cart.getTitle() + '<br>' + cart.getDamage();
-            lineHtml.appendChild(cartItem);
+            let card = line.getCards()[i];
+            let cardHtml = new Views.Card(card);
+            lineHtml.appendChild(cardHtml.html());
         }
 
         

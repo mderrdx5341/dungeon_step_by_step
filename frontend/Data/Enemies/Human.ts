@@ -1,10 +1,30 @@
-import IEnemies from "./IEnemies";
+import IEnemies from "../../Core/IEnemies";
 
 class Human implements IEnemies
 {
-    name: "Human";
-    damege: 5;
-    health: 10;
+    private name: string;
+    private damage: number;
+    private health: number;
+
+    public constructor() 
+    {
+        this.name = "Human";
+        this.damage = 5;
+        this.health = 10;
+    }
+
+    public getName(): string
+    {
+        return this.name;
+    }
+
+    public getDamage(): number {
+        return this.damage;
+    }
+
+    public getHealth(): number {
+        return this.health;
+    }
 }
 
 export default Human;

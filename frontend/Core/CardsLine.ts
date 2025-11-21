@@ -3,12 +3,13 @@ import Card from './Card';
 class CardsLine
 {
     private cards: Card[];
-    constructor()
+
+    constructor(card1: Card, card2: Card, card3: Card)
     {
         this.cards = [
-            new Card('Wrong'),
-            new Card('Wrong'),
-            new Card('Wrong')
+            card1,
+            card2,
+            card3
         ]
     }
 

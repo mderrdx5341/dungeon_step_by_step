@@ -11,14 +11,9 @@ class CardGenerator
         this.cardRepository = cardRepository;
     }
 
-    public getLine()
+    public getLine(): CardsLine
     {
-        return new CardsLine();
-    }
-
-    private getNewCard(): Card
-    {
-        return new Card('Wrong');
+        return this.cardRepository.getLine();
     }
 }
 

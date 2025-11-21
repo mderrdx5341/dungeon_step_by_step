@@ -1,8 +1,8 @@
-import IEnemies from "./IEnemies";
+import IEnemies from "../../Core/IEnemies";
 import Human from "./Human";
 import Org from "./Org";
 
 export default [
-    Human,
-    Org
+    new Human(),
+    new Org()
 ] as IEnemies[];

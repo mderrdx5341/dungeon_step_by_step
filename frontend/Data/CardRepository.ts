@@ -1,10 +1,11 @@
-import IEnemies from './Enemies/IEnemies';
+import IEnemies from '../Core/IEnemies';
 import enemies from './Enemies/index';
 import * as Core from '../Core';
 
 class CardRepository implements Core.ICardRrepository
 {
     private enemies: IEnemies[];
+
     public constructor()
     {
         this.enemies = enemies;
@@ -12,16 +13,18 @@ class CardRepository implements Core.ICardRrepository
 
     public getCard(): Core.Card
     {
-        return new Core.Card('Wrong');
+        let indexCard = Math.floor(Math.random() * 2);
+        let enemy = this.enemies[indexCard];
+        return new Core.Card(enemy);
     }
 
-    public getLine(): Core.Card[]
+    public getLine(): Core.CardsLine
     {
-        return [
-            new Core.Card('Wrong'),
-            new Core.Card('Wrong'),
-            new Core.Card('Wrong')
-        ]
+        return new Core.CardsLine(
+            this.getCard(),
+            this.getCard(),
+            this.getCard()
+        );
     }
 }
 
