@@ -1,6 +1,6 @@
 import './App.scss';
 import * as Core from './Core';
-import ICartRrepository from './Core/ICartRepository';
+import * as Data from './Data';
 import * as Views from './Views';
 
 class App
@@ -12,7 +12,8 @@ class App
     private cardsBoard: Core.CardsBoard;
     private cardsBoardView: Views.CardsBoard;
     private experience: number;
-    private dbCart: ICartRrepository;
+    private cardRepository: Data.CardRepository;
+    private cardGeneratror: Core.CardGenerator;
     private step: Core.Step;
 
     constructor(selector: string)
@@ -21,7 +22,9 @@ class App
         this.player = new Core.Player();
         this.playerView = new Views.Player(this.player);
         this.step = new Core.Step(this.player);
-        this.cardsBoard = new Core.CardsBoard(this.dbCart);
+        this.cardRepository = new Data.CardRepository();
+        this.cardGeneratror = new Core.CardGenerator(this.cardRepository)
+        this.cardsBoard = new Core.CardsBoard(this.cardGeneratror);
         this.cardsBoardView = new Views.CardsBoard(this.cardsBoard);
         this.experience = 0;
     }

@@ -1,17 +1,18 @@
 import CardsLine from "./CardsLine";
-import ICartRrepository from "./ICartRepository";
+import CardGenerator from "./CardGenerator";
 
 class CardsBoard
 {
     private cardsLine: CardsLine[];
-    private dbCards: ICartRrepository;
+    private cardGenerator: CardGenerator;
 
-    constructor(cartRepository: ICartRrepository)
+    constructor(cardGenerator: CardGenerator)
     {
+        this.cardGenerator = cardGenerator;
         this.cardsLine = [
-            new CardsLine(cartRepository),
-            new CardsLine(cartRepository),
-            new CardsLine(cartRepository),
+            this.cardGenerator.getLine(),
+            this.cardGenerator.getLine(),
+            this.cardGenerator.getLine(),
         ];
     }
 
@@ -47,9 +48,9 @@ class CardsBoard
         this.cardsLine[0] = this.generateLine();
     }
 
-    generateLine()
+    private generateLine()
     {
-        return new CardsLine(this.dbCards);
+        return this.cardGenerator.getLine();
     }
 }
 
