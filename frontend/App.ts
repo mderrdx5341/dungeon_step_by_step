@@ -13,12 +13,14 @@ class App
     private cardsBoardView: Views.CardsBoard;
     private experience: number;
     private dbCart: ICartRrepository;
+    private step: Core.Step;
 
     constructor(selector: string)
     {
         this.rootNode = document.querySelector(selector);
         this.player = new Core.Player();
         this.playerView = new Views.Player(this.player);
+        this.step = new Core.Step(this.player);
         this.cardsBoard = new Core.CardsBoard(this.dbCart);
         this.cardsBoardView = new Views.CardsBoard(this.cardsBoard);
         this.experience = 0;
@@ -60,27 +62,7 @@ class App
             } else if (this.playerView.getLine() == 'left') {
                 card = this.cardsBoard.getCardLineLeft();  
             }
-            
-            if (card.getDamage() > this.player.getDamage()) {
-                this.player.setHealts(this.player.getHealth() - card.getDamage());
-            }
-
-            if (this.player.getDamage() > card.getHealth()) {
-                if (card.getHealth() > 6) {
-                    this.playerView.addExperience(3);
-                    this.player.setDamage(this.player.getDamage() + 3);
-                } else if (card.getHealth() > 3) {
-                    this.playerView.addExperience(2);
-                    this.player.setDamage(this.player.getDamage() + 2);
-                } else {
-                    this.playerView.addExperience(1);
-                    //this.player.setDamage(this.player.getDamage() + 1);
-                }
-            }
-
-            this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
-            
-            
+            this.step.useCart(card);            
             this.cardsBoardView.newLine();
             
         }
