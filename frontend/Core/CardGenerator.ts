@@ -1,5 +1,6 @@
 import ICardRrepository from "./ICardRepository";
 import CardsLine from "./CardsLine";
+import Card from "./Card";
 
 class CardGenerator
 {
@@ -13,6 +14,11 @@ class CardGenerator
     public getLine()
     {
         return new CardsLine();
+    }
+
+    private getNewCard(): Card
+    {
+        return new Card('Wrong');
     }
 }
 
