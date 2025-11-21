@@ -1,0 +1,3 @@
+управление
+ 
+keyUP, keyLeft, keyRight
