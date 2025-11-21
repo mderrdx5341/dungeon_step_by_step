@@ -9,6 +9,7 @@ class App
     private keyboard: Views.Keyboard;
     private player: Core.Player;
     private playerView: Views.Player;
+    private playerPanelView: Views.PlayerPanel;
     private cardsBoard: Core.CardsBoard;
     private cardsBoardView: Views.CardsBoard;
     private experience: number;
@@ -21,6 +22,7 @@ class App
         this.rootNode = document.querySelector(selector);
         this.player = new Core.Player();
         this.playerView = new Views.Player(this.player);
+        this.playerPanelView = new Views.PlayerPanel(this.player);
         this.step = new Core.Step(this.player);
         this.cardRepository = new Data.CardRepository();
         this.cardGeneratror = new Core.CardGenerator(this.cardRepository)
@@ -51,6 +53,7 @@ class App
 
         this.rootNode.appendChild(this.cardsBoardView.render());
         this.rootNode.appendChild(this.playerView.render());
+        this.rootNode.appendChild(this.playerPanelView.render());
     }
 
     playerCartMoveTo(MoveTo)
@@ -70,6 +73,7 @@ class App
             
         }
         this.playerView.update();
+        this.playerPanelView.update();
     }
 
     public addExperience(experience: number)

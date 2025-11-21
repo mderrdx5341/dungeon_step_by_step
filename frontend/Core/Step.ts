@@ -14,20 +14,14 @@ class Step
     useCart(card)
     {
         this.stepNumber += 1;
-        if (card.getDamage() > this.player.getDamage()) {
+        if (this.player.getDamage() < card.getHealth()) {
             this.player.setHealts(this.player.getHealth() - card.getDamage());
         }
 
         if (this.player.getDamage() > card.getHealth()) {
             if (card.getHealth() > 6) {
-                //this.playerView.addExperience(3);
-                this.player.setDamage(this.player.getDamage() + 3);
             } else if (card.getHealth() > 3) {
-                //this.playerView.addExperience(2);
-                this.player.setDamage(this.player.getDamage() + 2);
             } else {
-                //this.playerView.addExperience(1);
-                //this.player.setDamage(this.player.getDamage() + 1);
             }
         }
 

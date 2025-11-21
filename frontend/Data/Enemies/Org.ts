@@ -9,7 +9,7 @@ class Org implements IEnemies
     public constructor() {
         this.name = 'Org';
         this.damage = 10;
-        this.health = 20;
+        this.health = 30;
     }
 
     public getName(): string

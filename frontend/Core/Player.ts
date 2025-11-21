@@ -1,3 +1,5 @@
+import Item from "./Item";
+
 class Player
 {
 
@@ -5,6 +7,7 @@ class Player
     private _health: number;
     private _damage: number;
     private _experience: number;
+    private _items: Map<string, Item>;
 
     constructor()
     {
@@ -12,6 +15,7 @@ class Player
         this._health = 1000;
         this._damage = 20;
         this._experience = 0;
+        this._items = new Map<string, Item>([['weapon', new Item()]]);
     }
 
     getName()
@@ -21,7 +25,7 @@ class Player
 
     getDamage()
     {
-        return this._damage;
+        return this._items.get('weapon').getDamage();
     }
 
     getHealth()
@@ -46,6 +50,11 @@ class Player
 
     setDamage(damage: number) {
         this._damage = damage;
+    }
+
+    getItems(): Map<string, Item>
+    {
+        return this._items;
     }
 }
 
