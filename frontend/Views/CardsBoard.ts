@@ -33,7 +33,7 @@ class CardsBoard
                 this.cardsBoardPanelHtml.classList.add('transition-none');
                 this._animation = true;
                 this.cardsBoard.update();
-                this.updateHtml2();
+                this.updateHtml();
                 this.cardsBoardPanelHtml.prepend(this.lines[0]);
             }
         });
@@ -48,7 +48,7 @@ class CardsBoard
 
     render()
     {
-        this.updateHtml();
+        this.generateHtml();
         return this.cardsBoardHtml;
     }
 
@@ -59,7 +59,7 @@ class CardsBoard
         }
     }
 
-    updateHtml()
+    generateHtml()
     {
         let top = 0;
         for(let i = 0; i < this.cardsBoard.getLines().length; i++) {
@@ -82,7 +82,7 @@ class CardsBoard
         }
     }
 
-    updateHtml2()
+    updateHtml()
     {
         let top = 0;
         let line = this.cardsBoard.getLines()[0];            
