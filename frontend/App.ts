@@ -60,6 +60,11 @@ class App
             } else if (this.playerView.getLine() == 'left') {
                 card = this.cardsBoard.getCardLineLeft();  
             }
+            
+            if (card.getDamage() > this.player.getDamage()) {
+                this.player.setHealts(this.player.getHealth() - card.getDamage());
+            }
+
             if (this.player.getDamage() > card.getHealth()) {
                 if (card.getHealth() > 6) {
                     this.playerView.addExperience(3);
@@ -69,11 +74,13 @@ class App
                     this.player.setDamage(this.player.getDamage() + 2);
                 } else {
                     this.playerView.addExperience(1);
-                    this.player.setDamage(this.player.getDamage() + 1);
+                    //this.player.setDamage(this.player.getDamage() + 1);
                 }
             }
+
             this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
-            this.player.setHealts(this.player.getHealth() - card.getDamage());
+            
+            
             this.cardsBoardView.newLine();
             
         }
