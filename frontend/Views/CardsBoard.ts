@@ -51,8 +51,9 @@ class CardsBoard
     {
         this.cardsBoardPanelHtml.classList.remove('transition-none');
         for(let i = 0; i < this.lines.length; i++) {
-            this.lines[i].style.top = (this.getTop(this.lines[i].style.top) + height) + 'px';
+            this.lines[i].style.top = (this.getTop(this.lines[i].style.top) + 20 + height) + 'px';
         }
+
         this.cardsBoard.update();
         this.updateHtml2();
         this.cardsBoardPanelHtml.classList.add('transition-none');
@@ -85,15 +86,6 @@ class CardsBoard
     updateHtml2()
     {
         let top = 0;
-
-        this.lines[2].remove();
-        this.lines[2] = this.lines[1];
-        this.lines[1] = this.lines[0];
-
-        
-        this.lines[1].style.top =  (this.getTop(this.lines[1].style.top) - 120 + height) + 'px';
-        this.lines[2].style.top =  (this.getTop(this.lines[2].style.top) - 120 + height) + 'px';
-
         let line = this.cardsBoard.getLines()[0];            
         let lineHtml = document.createElement('div');
         lineHtml.classList = 'cards_board__line' + ' ' + top;
@@ -108,6 +100,10 @@ class CardsBoard
             lineHtml.appendChild(cartItem);
         }
 
+        
+        this.lines[2].remove();
+        this.lines[2] = this.lines[1];
+        this.lines[1] = this.lines[0];
         this.lines[0] = lineHtml;
     }
 
