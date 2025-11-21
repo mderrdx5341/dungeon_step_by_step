@@ -52,7 +52,6 @@ class App
     {
         let isStep = this.playerView.MoveTo(MoveTo);
         if (isStep && this.cardsBoardView.isAnimation()) {
-            this.cardsBoardView.newLine();
             let card = null;
             if (this.playerView.getLine() == 'center') {
                 card = this.cardsBoard.getCardLineUp();
@@ -75,6 +74,7 @@ class App
             }
             this.player.setDamage(this.player.getDamage() - parseInt(card.getHealth()));
             this.player.setHealts(this.player.getHealth() - card.getDamage());
+            this.cardsBoardView.newLine();
             
         }
         this.playerView.update();
